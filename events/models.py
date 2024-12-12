@@ -8,3 +8,13 @@ class Event(models.Model):
     time = models.CharField(max_length=30)
     location = models.CharField
     description = models.CharField(max_length=100)
+    poster = models.ImageField(upload_to='event_posters/')
+    registration_link = models.URLField()
+
+    def __str__(self):
+        return self.name
+
+
+    
+
+   

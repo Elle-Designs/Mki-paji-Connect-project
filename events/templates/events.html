@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Events | Mkipaji Connect{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+  <h2 class="text-center mb-4">UPCOMING EVENTS</h2>
+  
+  <div class="row">
+    {% for event in events %}
+      <div class="col-md-3 mb-4">
+        <div class="card position-relative">
+          <img src="{% static 'events/media/event_posters/pexels-640491770-27666146.jpg' %}" class="card-img-top" alt="{{ event.name }}">
+          
+          <!-- Dropdown Details Button -->
+          <div class="position-absolute top-0 start-0 m-2">
+            <div class="dropdown">
+              <button class="btn btn-dark btn-sm dropdown-toggle" type="button" id="detailsDropdown{{ forloop.counter }}" data-bs-toggle="dropdown" aria-expanded="false">
+                Details
+              </button>
+              <div class="dropdown-menu p-3 bg-dark text-white" aria-labelledby="detailsDropdown{{ forloop.counter }}" style="width: 100%; opacity: 0.9;">
+                <p><strong>Name:</strong> {{ event.name }}</p>
+                <p><strong>Date:</strong> {{ event.date }}</p>
+                <p><strong>Time:</strong> {{ event.time }}</p>
+                <p><strong>Location:</strong> {{ event.location }}</p>
+                <p><strong>Description:</strong> {{ event.description }}</p>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Register Button -->
+          <div class="position-absolute bottom-0 end-0 m-2">
+            <!-- <a href="{% url 'register_event' event.id %}" class="btn btn-primary btn-sm rounded-pill">Register</a> -->
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+
