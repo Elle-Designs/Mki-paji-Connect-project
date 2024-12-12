@@ -8,8 +8,7 @@ def index(request):
     return render(request, 'home.html')
 
 def events(request):
-    # events = Event.objects.all()
-    events = {1,2,3,4,5,6,7,8,9,10}
+    events = Event.objects.all()
     return render(request, 'events.html', {'events': events})
 
 

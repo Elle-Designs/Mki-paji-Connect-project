@@ -204,4 +204,27 @@ body {
     }
 }
 
+ul{
+    text-decoration: none;
+    list-style: none;
+}
+
+.my-card{
+    height: 400px;
+    width: 200px;
+
+
+}
+
+.my-card img{
+    height: 40%;
+    width: 100%;
+    border-top-left-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
+
+}
+
+.event-item{
+    
+}
 
